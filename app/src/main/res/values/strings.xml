@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mob</string>
+    <string name="tab_home">Home</string>
+    <string name="tab_search">Search</string>
+    <string name="tab_planner">Planner</string>
+    <string name="tab_shopping">Shopping</string>
+    <string name="tab_saved">Saved</string>
+    <string name="model_download_channel">Model downloads</string>
+    <string name="model_download_title">Downloading on-device model</string>
+</resources>

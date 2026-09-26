@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mob_black">#FF111111</color>
+    <color name="mob_cream">#FFF7F3EC</color>
+    <color name="mob_orange">#FFFF5A1F</color>
+    <color name="ic_launcher_background">#FF111111</color>
+</resources>

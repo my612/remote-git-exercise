@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A bold "M" on a fork tine, kept as a plain vector so no bitmap assets are needed. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#FFF7F3EC"
+        android:pathData="M30,74 L30,34 L38,34 L54,56 L70,34 L78,34 L78,74 L70,74 L70,47 L54,68 L38,47 L38,74 Z" />
+    <path
+        android:fillColor="#FFFF5A1F"
+        android:pathData="M50,78 h8 v6 h-8 z" />
+</vector>
