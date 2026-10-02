@@ -56,24 +56,23 @@ Run one with a Streamable HTTP transport (most FastMCP servers: `--transport str
 
 ## Building
 
-Requirements: Android Studio Narwhal 3 (or newer) with JDK 17+, Android SDK 36, and an arm64 device or
-emulator. Then:
+Requirements: Android Studio Panda or newer (anything that supports AGP 9.4), JDK 17 or newer, and Android SDK 37
+(`platforms;android-37.0`). Then:
 
 ```bash
-./gradlew :app:assembleDebug
+./gradlew :app:assembleDebug        # app/build/outputs/apk/debug/app-debug.apk
 ./gradlew :app:testDebugUnitTest
+adb install app/build/outputs/apk/debug/app-debug.apk
 ```
 
-The project uses AGP 8.13, Kotlin 2.4, Compose (BOM 2025.06.01), Room 2.7 with KSP, Ktor 3.5, Coil 3,
-Jsoup, the official MCP Kotlin SDK 0.15, ML Kit GenAI Prompt and LiteRT-LM. Versions live in
-`gradle/libs.versions.toml`.
+The project uses AGP 9.4 (built-in Kotlin) on Gradle 9.8, Kotlin 2.4, Compose BOM 2026.09, Room 2.8 with KSP,
+Ktor 3.5, Coil 3, Jsoup, the official MCP Kotlin SDK 0.15, ML Kit GenAI Prompt 1.0.0-beta4 and LiteRT-LM 0.17.
+Versions live in `gradle/libs.versions.toml`. The debug APK is large (~110 MB) because LiteRT-LM ships native
+libraries; it targets arm64 only.
 
-**Build status note.** This repository was authored in an environment without access to Google's Maven
-repository or the Android SDK, so the Compose UI layer has not been compiled yet. The domain, data, network,
-MCP and AI layers (everything under `domain/`, `data/`, `ai/`, `di/`) were compiled with the Kotlin 2.4
-compiler against the real Ktor, kotlinx.serialization, Jsoup and MCP SDK jars, and the unit tests in
-`app/src/test` pass (19 tests). Expect to fix a handful of small Compose/AndroidX API mismatches on the first
-Android Studio build; the ML Kit and LiteRT-LM adapters are the most likely places.
+**Build status.** `assembleDebug` and `testDebugUnitTest` succeed (19 unit tests pass). The app has not yet been
+run on a device or emulator, so screens and the two on-device AI engines are compile-checked but untested at
+runtime. Expect rough edges on first launch.
 
 ## Project layout
 
